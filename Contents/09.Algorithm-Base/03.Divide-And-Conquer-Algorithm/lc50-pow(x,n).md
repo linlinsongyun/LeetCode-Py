@@ -22,7 +22,7 @@ class Solution:
                 res = res * x
                
             x = x * x
-            n >> 1
+            n >>= 1
         return res
         
         
