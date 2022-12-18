@@ -9,6 +9,29 @@
 
 要求：统计 `target` 在排序数组 `nums` 中出现的次数。
 
+## 解题思路leetcode
+[二分法](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/solutions/155893/mian-shi-ti-53-i-zai-pai-xu-shu-zu-zhong-cha-zha-5/)
+
+
+```python
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if len(nums) == 0:
+            return 0
+        return self.binary_search(nums, target) - self.binary_search(nums, target-1)
+
+    def binary_search(self, nums, target):
+        left, right = 0 , len(nums)-1
+        while left <= right:
+            mid = left + (right - left)//2
+            if nums[mid] > target:
+                right = mid-1
+            else:
+                left = mid+1 ## >=的情况，mid+1
+        return right
+        
+```
 ## 解题思路
 
 两次二分查找。
