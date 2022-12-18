@@ -11,7 +11,19 @@
 
 ## 解题思路
 
+解题思路：https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solutions/184216/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/
+
 已知中序遍历「左 -> 根 -> 右」能得到递增序列。逆中序遍历「右 -> 根 -> 左」可以得到递减序列。
+
+```python
+# 打印中序遍历倒序
+def dfs(root):
+    if not root: return
+    dfs(root.right) # 右
+    print(root.val) # 根
+    dfs(root.left)  # 左
+ ```
+
 
 则根据「右 -> 根 -> 左」递归遍历 k 次，找到第 `k` 个节点位置，并记录答案。
 
