@@ -1,6 +1,6 @@
 # [剑指 Offer 54. 二叉搜索树的第k大节点](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/)
 
-[leetcode230 二叉搜索树第k小节点] (https://leetcode.cn/problems/kth-smallest-element-in-a-bst/submissions/389764554/)
+[leetcode230 二叉搜索树第k小节点](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/submissions/389764554/)
 
 - 标签：树、深度优先搜索、二叉搜索树、二叉树
 - 难度：简单
