@@ -9,7 +9,8 @@
 
 要求：求出这个圆圈中剩下的最后一个数字。 
 
-## 解题思路
+## [解题思路](https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solutions/177639/javajie-jue-yue-se-fu-huan-wen-ti-gao-su-ni-wei-sh/)
+- 数学上的约瑟夫环问题
 
 模拟循环删除，需要进行 `n - 1` 轮，每轮需要对节点进行 `m` 次访问操作。总体时间复杂度为 `O(nm)`。
 
