@@ -13,7 +13,7 @@
 
 ## 解题思路
 
-解题思路：https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solutions/184216/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/
+[leetcode解题思路说明](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solutions/184216/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/)
 
 已知中序遍历「左 -> 根 -> 右」能得到递增序列。逆中序遍历「右 -> 根 -> 左」可以得到递减序列。
 
