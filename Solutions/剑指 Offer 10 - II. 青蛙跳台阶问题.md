@@ -9,6 +9,19 @@
 
 要求：求该青蛙跳上 `n` 级台阶共有多少中跳法。答案需要对 `1000000007` 取余。
 
+## 解题思路（动态规划）
+```python
+class Solution:
+    def numWays(self, n: int) -> int:
+        if n==0:
+            return 1
+        dp = [i for i in range(n+1)]
+
+        for i in range(3, n+1):
+            dp[i] = (dp[i-1] + dp[i-2])%1000000007
+        return dp[-1]
+```
+
 ## 解题思路
 
 先来看一下规律：
