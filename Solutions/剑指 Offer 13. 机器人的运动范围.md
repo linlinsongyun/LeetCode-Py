@@ -24,7 +24,37 @@
 输入：m = 3, n = 1, k = 0
 输出：1
 ```
+## 解题思路self
 
+### [思路](https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/solutions/1448376/by-da-fei-de-tian-kong-dhms/)
+
+- 从（0，0）开始搜索，两个方向：向下 or 向右，搜索过的点加入集合，不需要回溯
+
+```python
+class Solution:
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        self.visited = set()
+        self.m, self.n = m, n
+        ans = self.dfs(0, 0, k)
+        return ans
+
+    def count_sum(self, index):
+        cnt_idx = 0
+        while index:
+            cnt_idx += index%10
+            index = index//10
+        return cnt_idx
+
+    def dfs(self, i, j, k):
+
+        cnt_idx = self.count_sum(i) + self.count_sum(j)
+        if i>=self.m or j>=self.n or cnt_idx >k or (i,j) in self.visited:
+            return 0
+        self.visited.add((i,j))
+
+        ans = 1 + self.dfs(i+1, j, k) + self.dfs(i, j+1, k)
+        return ans
+```
 ## 解题思路
 
 ### 思路 1：广度优先搜索
