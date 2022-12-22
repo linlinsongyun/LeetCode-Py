@@ -9,6 +9,36 @@
 
 - 单词必须按照字母顺序通过上下左右相邻的单元格字母构成。且同一个单元格内的字母不允许被重复使用。
 
+## 【解题思路DFS】(https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/solutions/1293663/jian-zhi-offer-12-ju-zhen-zhong-de-lu-ji-576i/?orderBy=most_votes)
+
+```python
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        n, m = len(board), len(board[0])
+
+        def dfs(i, j, k):
+
+            if i<0 or i>=n or j<0 or j>=m or board[i][j] != word[k]:
+                return False
+            if k == len(word)-1:
+                return True
+            board[i][j] = ''
+
+            ans1 = dfs(i+1, j, k+1)
+            ans2 = dfs(i-1, j, k+1)
+            ans3 = dfs(i, j+1, k+1)
+            ans4 = dfs(i, j-1, k+1)
+            ans = ans1 or ans2 or ans3 or ans4
+            board[i][j] = word[k]
+            return ans
+
+        for i in range(n):
+            for j in range(m):
+                if dfs(i, j, 0):
+                    return True
+        return False
+```
+
 ## 解题思路
 
 回溯算法在二维矩阵 `board` 中按照上下左右四个方向递归搜索。设函数 `backtrack(i, j, index)` 表示从 `board[i][j]` 出发，能否搜索到单词字母 `word[index]`，以及 `index` 位置之后的后缀子串。如果能搜索到，则返回 `True`，否则返回 `False`。`backtrack(i, j, index)` 执行步骤如下：
