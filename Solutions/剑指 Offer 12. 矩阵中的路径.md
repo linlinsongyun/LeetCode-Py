@@ -9,7 +9,7 @@
 
 - 单词必须按照字母顺序通过上下左右相邻的单元格字母构成。且同一个单元格内的字母不允许被重复使用。
 
-## 【解题思路DFS】(https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/solutions/1293663/jian-zhi-offer-12-ju-zhen-zhong-de-lu-ji-576i/?orderBy=most_votes)
+## [解题思路DFS](https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/solutions/1293663/jian-zhi-offer-12-ju-zhen-zhong-de-lu-ji-576i/?orderBy=most_votes)
 
 ```python
 class Solution:
