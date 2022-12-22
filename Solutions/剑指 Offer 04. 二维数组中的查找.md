@@ -9,6 +9,25 @@
 
 要求：判断矩阵中是否可以找到 `target`，若找到 `target`，返回 `True`，否则返回 `False`。
 
+## 解题思路self
+- 找一个数据单调变化的方向，左下角或者右上角， not左上角or右下角
+```python
+class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
+        i, j = len(matrix)-1, 0
+
+        while i >=0 and j<(len(matrix[0])):
+            if matrix[i][j] == target:
+                return True
+            elif matrix[i][j] < target:
+                j += 1
+            else:
+                i -= 1
+        return False
+
+        
+```
+
 ## 解题思路
 
 矩阵是有序的，可以考虑使用二分搜索来进行查找。
